@@ -68,14 +68,5 @@ It can be useful  for online trade and banking operations.
 
 * The data can be splitted into test and train using time seris splitting. Test set ratio can be changed.
 
-* 
-
-
-
-
-
-
-
-
 -----------------------------------------------------------------
 
