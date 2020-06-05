@@ -29,8 +29,8 @@ We have captured specific missing value patterns in some variables when the miss
 
 # Feature Engineering
 
-* We set the cards with less than 2 frequencies are defined as invalid cards.
-* We created the Userid combining 'card1', 'P_emaildomain', and 'addr1' variables as a string.
+* We defined the cards with less than 2 frequencies as invalid cards and we set the observations of those card values as missing values.
+* We created the Userid combining 'card1', 'P_emaildomain', and 'addr1' variables as a string. Infacy we tried many Userid variables from the cards,'P_emaildomain', and 'addr1' and finally we decided to use these three varibles as they give better AUC score in the final results.
 * We extracted the used browser, device OS, and the versions of the devices.
 * We standardized the transaction amount and saved it as a new variable.
 * We created a dummy variable that controls whether the user uses the last updated browsers.
@@ -42,7 +42,7 @@ We have captured specific missing value patterns in some variables when the miss
 * We performed rolling window aggregations of the last ten transactions.
 * We factorized categorical variables into numerical values and set their missing values as -1.
 * We frequency encode 'addr1', 'card1', 'card2', 'card3', 'P_emaildomain' variables.
-/ We aggregated many numerical variables with respect to the Userid and finally, we dropped the Userid in order not to memorize the Train data.
+* We aggregated many numerical variables with respect to the Userid and finally, we dropped the Userid in order not to memorize the Train data.
 
 # Model
 
@@ -50,7 +50,7 @@ The data in the data set is unbalanced and its features contain a lot of missing
 
 We tested the sensitivity of Catboost model to the categorical features. The categorical feature property of Catboost was preferred as it showed very high success in each trial.
 
-Confusion matrix and Classification report are obtained. F1, Precision, and Recall values are compared for different models.
+Classification report  and Confusion matrix are reported. F1, Precision, and Recall values are compared for different models.
 
 As the model evaluation metrics we used Area Under Curve (AUC) parallel to the competition's decision. This is important because pure accuracy scores can be misleading as we want to detect very rare fraud values and AUC score is higher with high true-positive and low false-positive rates.
 
