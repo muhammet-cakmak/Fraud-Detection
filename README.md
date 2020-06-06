@@ -59,7 +59,7 @@ As the model evaluation metrics we used Area Under Curve (AUC) parallel to the c
 # Conclusion
 
 This study can be useful to detect fraudulent online trade and banking operations.
-
+![](results.jpg)
 
 # Further Studies
 
