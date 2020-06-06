@@ -13,13 +13,13 @@ This project was handled to finish the Data Science Bootcamp training organized 
 The aim of the project is benchmarking machine learning models on a challenging large-scale dataset to determine if the transactions are fraud or not. 
 
 # About Data Set
-The data was published by the competition hosted by the IEEE Computational Intelligence Society [(IEEE-CIS)](https://cis.ieee.org/) on [Kaggle](https://www.kaggle.com/) in 2019. It originates from the world’s leading payment service company, [Vesta Corporation](https://trustvesta.com/). You can read about the fraud detection competition and find the data set [here.](https://www.kaggle.com/c/ieee-fraud-detection). The train set of the merged data had initially 590.540 observations and 434 variables and the test set had 506.691 observations and 433 variables, accounting for a total of 5 GB memory before pre-processing data. Hence, we applied memory reductions for the data at the beginning, during, and at the end of the pre-processing procedure.
+The data was published by the competition hosted by the IEEE Computational Intelligence Society [(IEEE-CIS)](https://cis.ieee.org/) on [Kaggle](https://www.kaggle.com/) in 2019. It originates from the world’s leading payment service company, [Vesta Corporation](https://trustvesta.com/). You can read about the fraud detection competition and find the data set [here.](https://www.kaggle.com/c/ieee-fraud-detection). The train set of the merged data had initially 590,540 observations and 434 variables and the test set had 506,691 observations and 433 variables, accounting for a total of 5 GB memory before pre-processing data. Hence, we apply memory reductions for the data at the beginning, during, and at the end of the pre-processing procedure.
 
 
 
  #  Abstract
 
-The data set used in this project was given as 4 different CSV files, two of which are Train sets and the other two belong to the Test set. We fixed the structural errors by using train set columns and combined the two data sets (id and transaction) with left join for Train and Test set. Since more than 95% of the variables given in terms of data privacy are kept confidential, we grouped the variables with different pattern determination techniques. After applying the EDA analysis to the grouped variables, we defined the Userid variable to identify each person to whom the transactions belong. Based on the Userid, we performed feature engineering and obtained a Train set with the dimension of 590540 x 284  before we start modeling. We predicted the Test set using tree-based models like XGBoost, LightGBM, and CatBoost using this Train set we obtained. We used the GridSearch method to determine the hyperparameters of these models. Then we applied Kfold cross-validation to the models using the tuned parameters and achieved higher accuracy results. The accuracy of these 3 models turned out to be very close to each other. Accuracy values of XGBoost, LightGBM and CatBoost were 92%, 91% and 90%, respectively.
+The data set used in this project is given as 4 different CSV files, two of which are Train sets and the other two belong to the Test set. We fix the structural errors by using train set columns and combined the two data sets (id and transaction) with left join for Train and Test set. Since more than 95% of the variables given in terms of data privacy are kept confidential, we grouped the variables with different pattern determination techniques. After applying the EDA analysis to the grouped variables, we define the Userid variable to identify each person to whom the transactions belong. Based on the Userid, we performed feature engineering and obtained a Train set with the dimension of 590,540 x 284  before we start modeling. We predicted the Test set using tree-based models like XGBoost, LightGBM, and CatBoost using this Train set we obtained. We use the GridSearch method to determine the hyperparameters of these models. Then we applied Kfold cross-validation to the models using the tuned parameters and achieved higher accuracy results. The accuracy of these 3 models turned out to be very close to each other. Accuracy values of XGBoost, LightGBM and CatBoost were 92%, 91% and 90%, respectively.
 
 # Pre-processing
 
@@ -29,20 +29,20 @@ We have captured specific missing value patterns in some variables when the miss
 
 # Feature Engineering
 
-* We defined the cards with less than 2 frequencies as invalid cards and we set the observations of those card values as missing values.
-* We created the Userid combining 'card1', 'P_emaildomain', and 'addr1' variables as a string. Infacy we tried many Userid variables from the cards,'P_emaildomain', and 'addr1' and finally we decided to use these three varibles as they give better AUC score in the final results.
-* We extracted the used browser, device OS, and the versions of the devices.
-* We standardized the transaction amount and saved it as a new variable.
-* We created a dummy variable that controls whether the user uses the last updated browsers.
-* We extracted country information from email domains and the foreign country information from the decimal length of the transaction amounts.
-* We checked whether the purchaser and the recipient emails have the same domain and created a dummy for this check.
-* We created time variables and US h.olidays variables.
-* We mean encoded fraud ratios for ProductCD and M4 categories.
-* We rescaled  D Columns to transform them into their point in the past.
-* We performed rolling window aggregations of the last ten transactions.
-* We factorized categorical variables into numerical values and set their missing values as -1.
-* We frequency encoded 'addr1', 'card1', 'card2', 'card3', 'P_emaildomain' variables.
-* We aggregated many numerical variables with respect to the Userid and finally, we dropped the Userid in order not to memorize the Train data.
+* We define the cards with less than 2 frequencies as invalid cards and we set the observations of those card values as missing values.
+* We create the Userid combining 'card1', 'P_emaildomain', and 'addr1' variables as a string. Infacy we tried many Userid variables from the cards,'P_emaildomain', and 'addr1' and finally we decided to use these three varibles as they give better AUC score in the final results.
+* We extract the used browser, device OS, and the versions of the devices.
+* We standardize the transaction amount and saved it as a new variable.
+* We create a dummy variable that controls whether the user uses the last updated browsers.
+* We extract country information from email domains and the foreign country information from the decimal length of the transaction amounts.
+* We check whether the purchaser and the recipient emails have the same domain and created a dummy for this check.
+* We create time variables and US h.olidays variables.
+* We mean encode fraud ratios for ProductCD and M4 categories.
+* We rescale  D Columns to transform them into their point in the past.
+* We perform rolling window aggregations of the last ten transactions.
+* We factorize categorical variables into numerical values and set their missing values as -1.
+* We frequency encode 'addr1', 'card1', 'card2', 'card3', 'P_emaildomain' variables.
+* We aggregate many numerical variables with respect to the Userid and finally, we dropped the Userid in order not to memorize the Train data.
 
 # Model
 
