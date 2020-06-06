@@ -37,11 +37,11 @@ We have captured specific missing value patterns in some variables when the miss
 * We extracted country information from email domains and the foreign country information from the decimal length of the transaction amounts.
 * We checked whether the purchaser and the recipient emails have the same domain and created a dummy for this check.
 * We created time variables and US h.olidays variables.
-* We mean encode fraud ratios for ProductCD and M4 categories.
-* We rescale  D Columns to transform them into their point in the past.
+* We mean encoded fraud ratios for ProductCD and M4 categories.
+* We rescaled  D Columns to transform them into their point in the past.
 * We performed rolling window aggregations of the last ten transactions.
 * We factorized categorical variables into numerical values and set their missing values as -1.
-* We frequency encode 'addr1', 'card1', 'card2', 'card3', 'P_emaildomain' variables.
+* We frequency encoded 'addr1', 'card1', 'card2', 'card3', 'P_emaildomain' variables.
 * We aggregated many numerical variables with respect to the Userid and finally, we dropped the Userid in order not to memorize the Train data.
 
 # Model
