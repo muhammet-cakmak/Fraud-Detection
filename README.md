@@ -58,7 +58,7 @@ As the model evaluation metrics we used Area Under Curve (AUC) parallel to the c
 
 # Conclusion
 
-Models and their results are given in the table below. The evaluation metric of the contest was AUC, and it seems that the best result was the XGBoost model with Kfold with 91.89%. As it was expected  the recall values of the models with K-fold were higher than the model without K-fold. XGBoost model with Kfold was able to catch 90% of frauds. When evaluated according to recall values, LightGBM with K-fold  made more accurate predictions. The recall value of the model was 92%
+Models and their results are given in the table below. The evaluation metric of the contest was AUC, and it seems that the best result was the XGBoost model with Kfold with 91.99%. As it was expected  the recall values of the models with K-fold were higher than the model without K-fold. XGBoost model with Kfold was able to catch 90% of frauds. When evaluated according to recall values, LightGBM with K-fold  made more accurate predictions. The recall value of the model was 92%
 
 
 ![](results1.jpg) 
