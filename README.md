@@ -61,7 +61,7 @@ As the model evaluation metrics we used Area Under Curve (AUC) parallel to the c
 Models and their results are given in the table below. The evaluation metric of the contest was AUC, and it seems that the best result was the XGBoost model with Kfold with 91.89%, but the recall value of this model is just 0.41. It was able to catch only 41% of frauds. When evaluated according to recall values, LightGBM and CatBoost's models created with GridSearch made more accurate predictions. The recall values of these models are 0.75 and 0.73, respectively.
 
 
-![](results.jpg)
+![](results.jpg) 
 
 # Further Studies
 
