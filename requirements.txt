@@ -4,3 +4,6 @@ scikit-learn
 numpy
 ipython
 scipy
+xgboost
+lightgbm
+catboost
